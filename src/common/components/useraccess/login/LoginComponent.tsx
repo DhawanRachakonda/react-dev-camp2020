@@ -108,7 +108,7 @@ function LoginComponent() {
   const dispatch = useDispatch();
   const history = useHistory();
   const onFormSubmit = async () => {
-    await dispatch(loginUser({ userName: email, password: password }));
+    await dispatch(loginUser({ userName: email, password }));
     UserServices.setLoggedIn();
     setToaster(true);
     setTimeout(() => history.push(paths.viewDocs.routeLink), 3000);
