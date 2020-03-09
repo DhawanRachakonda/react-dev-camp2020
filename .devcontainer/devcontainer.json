@@ -1,5 +1,5 @@
 {
-  "name": "Save doc application",
+  "name": "Rect Dev Camp 2020 🎉 😄",
   "dockerFile": "Dockerfile",
   "appPort": [3000, 3003],
   //"forwardPorts": [3000, 3003],
