@@ -6,6 +6,9 @@ import Helmet from 'react-helmet';
 import { saveUser } from '../../../services/user';
 
 import './Registration.css';
+import { useHistory } from 'react-router-dom';
+import paths from '../../../../routes/paths';
+import SuccessToaster from '../../toaster/SuccessToaster';
 
 interface IRegistrationFormProps {
   setEmail: any;
@@ -88,12 +91,12 @@ function RegistrationForm({
           </Card.Body>
           <Card.Footer>
             <Row>
-              <Col lg={2} sm={2} xs={2}>
+              <Col lg={3} sm={2} xs={2}>
                 <Button variant="primary" type="submit" onClick={onSubmit}>
                   <FormattedMessage id="app.input.createAccount" />
                 </Button>
               </Col>
-              <Col lg={2} sm={2} xs={2}>
+              <Col lg={3} sm={2} xs={2}>
                 <Button variant="secondary" onClick={onClear}>
                   <FormattedMessage id="app.input.resetFields" />
                 </Button>
@@ -110,11 +113,16 @@ function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
+  const [isToasterEnabled, setToaster] = useState(false);
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    const response = await saveUser({ name, email, password });
-    // eslint-disable-next-line no-console
-    console.log('Response => ', response);
+    await saveUser({ name, email, password });
+    setToaster(true);
+    setTimeout(() => {
+      setToaster(false);
+      history.push(paths.login.routeLink);
+    }, 3000);
     onClear();
   };
 
@@ -128,6 +136,7 @@ function Register() {
       <Helmet>
         <title>Registration Page</title>
       </Helmet>
+      {isToasterEnabled && <SuccessToaster message="app.accountCreated" />}
       <RegistrationForm
         name={name}
         setName={(e: any) => setName(e.target.value)}
