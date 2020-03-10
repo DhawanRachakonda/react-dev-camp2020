@@ -111,6 +111,7 @@ function LoginComponent() {
     await dispatch(loginUser({ userName: email, password }));
     UserServices.setLoggedIn();
     setToaster(true);
+    // Go to view docs
     setTimeout(() => history.push(paths.viewDocs.routeLink), 3000);
     clearAll();
   };
