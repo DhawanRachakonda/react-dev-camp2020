@@ -3,7 +3,8 @@
   "dockerFile": "Dockerfile",
   "appPort": [3000, 3003],
   //"forwardPorts": [3000, 3003],
-  "runArgs": ["-u", "node"],
+  "runArgs": ["-u", "node", "--env-file", "devcontainer.env"],
+  "containerUser": "node",
   "settings": {
     "workbench.colorTheme": "Night Owl",
     "terminal.integrated.shell.linux": "/bin/zsh",
@@ -29,6 +30,7 @@
     "christian-kohler.npm-intellisense",
     "CoenraadS.bracket-pair-colorizer",
     "hazer.ReactCodeSnippets",
-    "vaughan.rdoc-readme"
+    "vaughan.rdoc-readme",
+    "mikestead.dotenv"
   ]
 }
