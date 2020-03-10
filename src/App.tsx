@@ -25,6 +25,7 @@ function AppEntry() {
 // handle "sub"-routes by passing them in a `routes`
 // prop to the component it renders.
 function RouteWithSubRoutes(route: any) {
+  console.log(route);
   if (route.exact) {
     return (
       <Route

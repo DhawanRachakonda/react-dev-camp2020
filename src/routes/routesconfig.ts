@@ -7,6 +7,7 @@ const RegistrationPage = lazy(() =>
   import('../common/components/useraccess/registration')
 );
 const PageNotFound = lazy(() => import('../common/components/page_not_found'));
+const ViewDocPage = lazy(() => import('../common/components/docs'));
 
 export default [
   // {
@@ -35,6 +36,10 @@ export default [
   {
     path: paths.registration.path,
     Component: RegistrationPage
+  },
+  {
+    path: paths.viewDocs.path,
+    Component: ViewDocPage
   },
   {
     path: '*',
