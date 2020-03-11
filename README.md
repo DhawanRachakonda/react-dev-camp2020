@@ -16,6 +16,8 @@
 <code>git checkout feature/react-redux</code>
 </p>
 
+[More Info On Project](https://github.com/DhawanRachakonda/react-dev-camp2020/blob/master/DOC.md)
+
 ## Docker
 
 <code>sudo docker build -t react-dev-camp .<code><br/>
