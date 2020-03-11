@@ -3,7 +3,7 @@
   "dockerFile": "Dockerfile",
   "appPort": [3000, 3003],
   //"forwardPorts": [3000, 3003],
-  "runArgs": ["-u", "node", "--env-file", "devcontainer.env"],
+  "runArgs": ["-u", "node", "--env-file", "./devcontainer.env"],
   "containerUser": "node",
   "settings": {
     "workbench.colorTheme": "Night Owl",
