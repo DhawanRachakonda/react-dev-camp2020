@@ -41,7 +41,7 @@
     "test:debug": "react-scripts --inspect-brk test --runInBand  --no-cache",
     "eject": "react-scripts eject",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
-    "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose",
+    "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose -e src/__mocks__/axios.ts",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|jsx|tsx|ts)\"",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },

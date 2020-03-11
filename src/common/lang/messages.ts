@@ -1,6 +1,5 @@
 export default {
   'en-US': {
-
     'app.welcomeMessage': '<h2>Welcome To Rect Dev Camp 2020 🎉 😄</h2>',
     'app.login': 'Login',
     'app.cancelLogin': 'Cancel',
