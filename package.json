@@ -38,6 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "set CI=true && react-scripts test --coverage",
+    "test:debug": "react-scripts --inspect-brk test --runInBand  --no-cache",
     "eject": "react-scripts eject",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose",
