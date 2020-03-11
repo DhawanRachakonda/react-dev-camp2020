@@ -1,5 +1,8 @@
 <h2>Welcome To Rect Dev Camp 2020 🎉 😄</h2>
 
+[Follow me on Twitter](https://twitter.com/The1Rachakonda)<br/>
+[Follow me on Github](https://github.com/DhawanRachakonda/)
+
 ## Dev Containers in VScode
 
 <ul>
@@ -14,8 +17,15 @@
 
 ## Git Repo and Branches
 
-<p>Branch master conatins all prerequisites</p>
-<p>Branch <code>feature/react-redux</code> contains entire solution for this camp</p>
+[Repo URL](https://github.com/DhawanRachakonda/react-dev-camp2020)
+
+<p>
+<div>Branch <strong><code>master</code></strong> conatins all prerequisites</div>
+<div>Branch <strong><code>feature/react-redux</code></strong> contains entire solution for this camp</div>
+<h3>Checkout process</h3>
+<code>git clone https://github.com/DhawanRachakonda/react-dev-camp2020.git</code><br/>
+<code>git checkout feature/react-redux</code>
+</p>
 
 ## Docker
 
@@ -81,7 +91,7 @@
 ## React testing library 🐐
 
 <ul>
-<li>Asyn Utils</li>
+<li>Async Utils</li>
 <li>getByTestId, getByText, getByRole, getAllByText</li>
 <li>findByText, findByRole, findAllByText, findAllByRole</li>
 <li>Generating Snapshots</li>
@@ -99,14 +109,17 @@
 ## Production Build
 
 <ul>
-<li>Docker file</li>
-<li>Nginx</li>
-<li>Overing default conf</li>
-<li>Enable GZip</li>
-<li>Brotli</li>
+<li>Building Image</li>
+<li>Exposing Ports</li>
+<li>Running Images</li>
+<li>Listing on docker process</li>
 </ul>
 
 ## Dev Containers in VScode
+
+<strong>Install plugin</strong>
+[Remote Container For VSCode](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)<br/>
+[Docker Setup](https://github.com/btholt/complete-intro-to-containers#getting-set-up)
 
 ### Adding themes
 
@@ -353,8 +366,6 @@ Refer <code>.lintstagedrc</code>
 
       }
 
-    </div>
-
   </p>
   <p>
     <div>Using Hooks</div>
@@ -377,8 +388,6 @@ Refer <code>.lintstagedrc</code>
         return (....)
       }
 
-    </div>
-
   </p>
 </arcticle>
 
@@ -390,5 +399,81 @@ Refer <code>.lintstagedrc</code>
 
 <article>
 <p>Configuration, Typescript for Redux - Refer code</p>
-<p>When to use redux 🙄</p>
+<p>
+<div>When to use redux? 🙄</div><br/0>
+<div>Use cases where the state of the app should be shared by multiple components and they are very far in tree. You don't need redux for components that don't share data between different components, which are very far from tree.
+</div><br/>
+<div>
+A better options would be context. See File <code>template.tsx</code> for usage of context.
+</div>
+</p>
+</article>
+
+## React Testing Library
+
+## Jest
+
+<article>
+<p>Refer 
+<ul>
+<li>
+src/common/components/useraccess/login/LoginComponent.test.tsx
+</li>
+
+<li>
+src/common/components/docs/ViewDoc.test.tsx
+</li>
+
+<li>
+src/test-utils.tsx
+</li>
+</ul>
+</p>
+</article>
+
+## Production Build
+
+### Building Image
+
+<article>
+<code>docker build -t react-dev-camp .</code>
+<p>This command checks for Dockerfile and executes all scripts present in that file. It creates cache for each command and executes that command only if it feels something has got updated</p>
+<p>Execution
+<ol>
+  <li>Gets node image and tags it as build</li>
+  <li>Sets env Files, wait, there is better approach, use docker compose</li>
+  <li>Set the working directory for any subsequent</li>
+  <li>Copies entire code to this directory. Excludes node_modules and .git.(Check .dockerignore)</li>
+  <li>Doesn't generate package-lock and installs dependencies and build app</li>
+  <li>Gets nginx image</li>
+  <li>Puts build folder in nginx</li>
+</ol>
+</p>
+</article>
+### Exposing Ports
+
+<article>
+<p>
+  <code>docker run --init --rm -d -p 80:80 react-dev-camp</code>
+  <div>-p binds external port to internal port. You can also use EXPOSE keyword in dockerfile</div>
+</p>
+</article>
+### Running Images
+
+<article>
+<p>
+  <code>docker run --init --rm -d -p 80:80 react-dev-camp</code>
+  <div>Runs generated image, -d specifies detach this process and run it in background</div>
+</p>
+</article>
+
+### Listing on docker process
+
+<article>
+<p>
+<code>docker ps</code>
+<div>Lists all currently running docker process</div>
+<code>docker ps %container_id%</code>
+<div>Kills a particular process</div>
+</p>
 </article>
