@@ -31,6 +31,7 @@
     "CoenraadS.bracket-pair-colorizer",
     "hazer.ReactCodeSnippets",
     "vaughan.rdoc-readme",
-    "mikestead.dotenv"
+    "mikestead.dotenv",
+    "msjsdiag.debugger-for-chrome"
   ]
 }
