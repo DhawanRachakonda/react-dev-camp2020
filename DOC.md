@@ -124,22 +124,17 @@ You cas also add like widget, in our case couple of examples could be adding rea
 <article>
 <p>
 <code>
-
 {
 "settings": {
-
     "workbench.colorTheme": "Night Owl",
     "terminal.integrated.shell.linux": "/bin/zsh",
-
     "editor.tabSize": 2,
     "editor.formatOnSave": true,
     "prettier.requireConfig": true,
     "eslint.enable": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-
 }
 }
-
 </code>
 
 </p>
