@@ -3,12 +3,11 @@ import { Card, Button, Row, Col, Form } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
 
-import { saveUser } from '../../../services/user';
-
 import './Registration.css';
 import { useHistory } from 'react-router-dom';
 import paths from '../../../../routes/paths';
 import SuccessToaster from '../../toaster/SuccessToaster';
+import { saveUser } from '../../../../store/user';
 
 interface IRegistrationFormProps {
   setEmail: any;
