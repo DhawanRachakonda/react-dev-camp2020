@@ -73,7 +73,12 @@ const logout = () => async (dispatch: Dispatch<ILogoutUser>) => {
       type: EReduxActionTypes.LOGOUT_USER,
       payload: {}
     });
-  } catch (error) {}
+  } catch (error) {
+    dispatch({
+      type: EReduxActionTypes.LOGOUT_USER,
+      payload: {}
+    });
+  }
 };
 
 export { loginUser, saveUser, logout };
