@@ -99,6 +99,7 @@ describe('tests for Login component', () => {
     );
     userEvent.click(getByTestId('loginButton'));
     await wait(() => getByText(/login success/i));
+    // run all pending timers.
     jest.runAllTimers();
     expect((getByTestId('emailInputEle') as HTMLInputElement).value).toBe('');
     expect((getByTestId('passwordInputEle') as HTMLInputElement).value).toBe(
